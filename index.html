@@ -2,39 +2,81 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title></title>
+<title>Login</title>
 <style>
 body { 
     text-align: center; 
     margin: 50px; 
     background: #fff; 
+    font-family: Arial, sans-serif;
+}
+#login-box {
+    border: 2px solid #333;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f9f9f9;
+}
+input[type="password"] {
+    padding: 10px;
+    font-size: 16px;
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+#content {
+    display: none; /* Bilder erst nach Login sichtbar */
 }
 img { 
     max-width: 300px; 
     margin: 20px; 
 }
-button { 
-    padding: 10px 20px; 
-    font-size: 16px; 
-    cursor: pointer; 
-}
 </style>
 </head>
 <body>
 
-<!-- Deine Bilder -->
-<img src="vik.jpg" alt="vik">
-<img src="jp.png" alt="jp">
-<img src="actrually.webp" alt="actrually">
-<img src="Quandale-Dingle-8.jpg" alt="Quandale-Dingle-8">
-<img src="what-music-do-you-think-i-listen-to-v0-5kxskzrgkv7f1.webp">
-<img src="ah.jpeg" alt="ah">
-<img src="bomba.jpeg" alt="bomba">
-<img src="cum.jpeg" alt="cum">
-<img src="luxulub.jpg" alt="luxulub">
-<img src="sybau.webp" alt="sybau">
-<img src="huhn.jpeg" alt="huhn">
+<!-- Login Box -->
+<div id="login-box">
+    <h2>Login</h2>
+    <p>Bitte Passwort eingeben:</p>
+    <input type="password" id="password" placeholder="Passwort">
+    <br>
+    <button onclick="checkPassword()">Login</button>
+    <p id="error" style="color:red;"></p>
+</div>
 
+<!-- Versteckte Inhalte (Bilder-Seite) -->
+<div id="content">
+    <h1>Willkommen!</h1>
+    <img src="vik.jpg" alt="vik">
+    <img src="jp.png" alt="jp">
+    <img src="actrually.webp" alt="actrually">
+    <img src="Quandale-Dingle-8.jpg" alt="Quandale-Dingle-8">
+    <img src="what-music-do-you-think-i-listen-to-v0-5kxskzrgkv7f1.webp">
+    <img src="ah.jpeg" alt="ah">
+    <img src="bomba.jpeg" alt="bomba">
+    <img src="cum.jpeg" alt="cum">
+    <img src="luxulub.jpg" alt="luxulub">
+    <img src="sybau.webp" alt="sybau">
+    <img src="huhn.jpeg" alt="huhn">
+</div>
 
+<script>
+function checkPassword() {
+    const input = document.getElementById("password").value;
+    const error = document.getElementById("error");
+    if (input === "dihcheese") {
+        document.getElementById("login-box").style.display = "none";
+        document.getElementById("content").style.display = "block";
+    } else {
+        error.textContent = "Falsches Passwort!";
+    }
+}
+</script>
 
+</body>
+</html>
 
