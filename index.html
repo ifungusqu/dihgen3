@@ -18,11 +18,27 @@ input[type="password"] {
     padding: 10px;
     font-size: 16px;
 }
-button {
+button, a.donate-btn {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
     margin-top: 10px;
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+button {
+    background: #007bff;
+    color: white;
+}
+a.donate-btn {
+    background: #ffc439; /* typisches PayPal-Gelb */
+    color: black;
+}
+#or-text {
+    margin-top: 15px;
+    font-weight: bold;
 }
 #content {
     display: none; /* Bilder unsichtbar bis Login */
@@ -42,6 +58,9 @@ img {
     <br>
     <button onclick="checkPassword()">Login</button>
     <p id="error" style="color:red;"></p>
+
+    <div id="or-text">or</div>
+    <a href="https://www.paypal.com/donate" target="_blank" class="donate-btn">Donate</a>
 </div>
 
 <!-- Versteckte Bilder -->
@@ -74,3 +93,4 @@ function checkPassword() {
 
 </body>
 </html>
+
